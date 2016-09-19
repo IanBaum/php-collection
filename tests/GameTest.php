@@ -11,21 +11,29 @@
         function test_save()
         {
             //Arrange
-            $test_name = "Minecraft";
-            $test_game = new Game($test_name);
-            $test_game->save();
+            $name = "Minecraft";
+            $test_game = new Game($name);
             //Act
-            $result = Game::getAll();
+            $test_game->save();
             //Assert
-            $this->assertEquals($test_name, $result);
+            $result = Game::getAll();
+            $this->assertEquals($test_game, $result[0]);
         }
 
-        function test_getAll(){
-
-              $test_name = "Starcraft";
-              $test_name2 = "water the stars";
-              $test_game = new Game($test_name);
-        }
+        // function test_getAll()
+        // {
+        //     //Arrange
+        //     $name = "Starcraft";
+        //     $name2 = "water the stars";
+        //     $test_game = new Game($name);
+        //     $test_game->save();
+        //     $test_game = new Game($name2);
+        //     $test_game->save();
+        //     //Act
+        //     $result = Task::getAll();
+        //     //Assert
+        //     $this->assertEquals([$test_game, $test_game2], $result);
+        // }
 
         // function test_deleteAll(){
         //     //Arrange
@@ -43,8 +51,6 @@
         //     $result = Game::getAll();
         //     $this->assertEquals([], $result);
         // }
-
-
 
     }
 ?>

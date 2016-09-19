@@ -20,7 +20,7 @@
 
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO game (name) VALUES ('{$this->getName()}');");
+            $GLOBALS['DB']->exec("INSERT INTO games (name) VALUES ('{$this->getName()}');");
         }
 
         static function getAll()
