@@ -1,28 +1,39 @@
 <?php
     class Game
     {
-        private $game_id;
         private $name;
 
-        function __construct($game_id, $name)
+        function __construct($name)
         {
-            $this->game_id = $game_id;
             $this->name = $name;
         }
 
-        function getGame_Id()
+        function getName()
         {
-            return $this->game_id;
+            return $this->name;
         }
 
-        function setGame_Id($new_game_id)
+        function setName($new_name)
         {
-            $this->game_id = (int) $new_game_id;
+            $this->name = (int) $new_name;
         }
 
         function save()
         {
-          // array_push();
+            $GLOBALS['DB']->exec("INSERT INTO game (name) VALUES ('{$this->getName()}');");
+        }
+
+        static function getAll()
+        {
+            $returned_games = $GLOBALS['DB']->query("SELECT * FROM games;");
+            $games = array();
+            foreach($returned_games as $game);
+            {
+              $name = $game['name'];
+              $new_game = new Game($name);
+              array_push($games, $new_game);
+            }
+            return $games;
         }
     }
 ?>

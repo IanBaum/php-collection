@@ -1,7 +1,7 @@
 <?php
     require_once "src/Game.php";
 
-    $server = 'mysql:host=8888;dbname=collections_test';
+    $server = 'mysql:host=localhost:8889;dbname=collections_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
@@ -13,12 +13,14 @@
             //Arrange
             $test_name = "Minecraft";
             $test_Game = new Game($test_name);
-            //Act
             $test_Game->save();
-            //Assert
+            //Act
             $result = Game::getAll();
-            $this->assertEquals($test_name, $result[0]);
+            //Assert
+            $this->assertEquals($test_name, $result);
         }
+
+        
 
     }
 ?>
