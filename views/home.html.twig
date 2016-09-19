@@ -8,27 +8,22 @@
   </head>
   <body>
     <div class="container">
-      <h1>Gamers' Games</h1>
-      <div class="row">
-        <div class="col-xs-6">
-          <h3>Players</h3>
-          
-          <div class="form-group">
-            <label for="game-search">Search for a game:</label>
-            <input type="text" class="form-control" id="game-search" placeholder="Super Mario World">
-          </div>
-        </div>
-        <div class="col-xs-6">
+
+      <h1>Your Game Collection</h1>
+
           <h3>Games</h3>
+          <table class="table-striped">
+            <div id="game-table">
+            </div>
+          </table>
 
           <form action="/results" method="post">
             <div class="form-group">
-              <label for="game-search">Search for a game:</label>
-              <input type="text" class="form-control" id="game-search" placeholder="Super Mario World">
+              <label for="game-entry">Search for a game:</label>
+              <input type="text" class="form-control" id="game-entry" placeholder="Super Mario World">
             </div>
           </form>
-        </div>
-      </div>
+
     </div>
   </body>
 </html>
