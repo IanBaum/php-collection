@@ -20,20 +20,20 @@
             $this->assertEquals($test_game, $result[0]);
         }
 
-        // function test_getAll()
-        // {
-        //     //Arrange
-        //     $name = "Starcraft";
-        //     $name2 = "water the stars";
-        //     $test_game = new Game($name);
-        //     $test_game->save();
-        //     $test_game = new Game($name2);
-        //     $test_game->save();
-        //     //Act
-        //     $result = Task::getAll();
-        //     //Assert
-        //     $this->assertEquals([$test_game, $test_game2], $result);
-        // }
+        function test_getAll()
+        {
+            //Arrange
+            $name = "Starcraft";
+            $name2 = "water the stars";
+            $test_game = new Game($name);
+            $test_game->save();
+            $test_game2 = new Game($name2);
+            $test_game2->save();
+            //Act
+            $result = Game::getAll();
+            //Assert
+            $this->assertEquals([$test_game, $test_game2], $result);
+        }
 
         // function test_deleteAll(){
         //     //Arrange
